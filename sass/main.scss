@@ -15,6 +15,11 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
+main,
+.main-content {
+    width: 100% !important;
+}
+
 body {
     margin: 0;
     background-color: var(--page-background-color) !important;
@@ -275,7 +280,7 @@ label:focus,
     margin: 20px 0;
     background: var(--box-color);
     border-radius: 8px;
-    min-height: 300px;
+    min-height: 30vh;
 
     .table-item {
         margin: 10px 20px;
@@ -301,7 +306,8 @@ label:focus,
 }
 
 .table-action-toggle-button {
-    display: none;
+    display: none !important;
+    padding: 0 !important;
 }
 
 .table-actions {
@@ -360,4 +366,29 @@ label:focus,
 
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
+}
+
+@media(max-width: 596px) {
+    .filter-selects {
+        display: none;
+    }
+
+    .header-items {
+        display: flex;
+        flex-wrap: nowrap !important;
+
+        .search-bar {
+            width: calc(100% - 25px);
+        }
+
+        .button-action {
+            width: 25px;
+            color: transparent;
+            padding: 5px 10px;
+
+            span {
+                color: white;
+            }
+        }
+    }
 }

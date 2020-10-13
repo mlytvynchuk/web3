@@ -82,12 +82,7 @@
                             Pending
                         </div>
                     </div>
-                    <div class="filter-selects">
-                        <select class="form-select">
-                            <option value="">From new to old</option>
-                            <option value="">From old to new</option>
-                        </select>
-                    </div>
+
                 </section>
                 <section class="content-table">
                     <div class="table-header">
@@ -119,30 +114,16 @@
                             <div class="table-col col-3">Sent</div>
                             <div class="table-col col-3">10 Jun 2020</div>
                             <div class="table-col col-3">
-                                <div class="table-actions">
-                                    <a href="#" class="button button-primary">
-                                        <span class="material-icons">
-                                            edit
-                                        </span>
-                                    </a>
-                                    <a href="#" class="button button-action">
-                                        <span class="material-icons">
-                                            content_copy
-                                        </span>
-                                    </a>
-                                    <a href="#" class="button button-danger">
-                                        <span class="material-icons">
-                                            delete
-                                        </span>
-                                    </a>
+                                <div class="dropdown table-action-toggle-button" style="float:left;">
+                                    <div class="button"><span class="material-icons">
+                                            more_vert
+                                        </span></div>
+                                    <div class="dropdown-content">
+                                        <a href="#">Edit</a>
+                                        <a href="#">Copy</a>
+                                        <a href="#">Delete</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="table-item">
-                            <div class="table-col col-3 text-bold">Some name</div>
-                            <div class="table-col col-3">Sent</div>
-                            <div class="table-col col-3">10 Jun 2020</div>
-                            <div class="table-col col-3">
                                 <div class="table-actions">
                                     <a href="#" class="button button-primary">
                                         <span class="material-icons">
@@ -171,7 +152,41 @@
                                     <div class="button"><span class="material-icons">
                                             more_vert
                                         </span></div>
-                                    <div class="dropdown-content" style="left:0;">
+                                    <div class="dropdown-content">
+                                        <a href="#">Edit</a>
+                                        <a href="#">Copy</a>
+                                        <a href="#">Delete</a>
+                                    </div>
+                                </div>
+                                <div class="table-actions">
+                                    <a href="#" class="button button-primary">
+                                        <span class="material-icons">
+                                            edit
+                                        </span>
+                                    </a>
+                                    <a href="#" class="button button-action">
+                                        <span class="material-icons">
+                                            content_copy
+                                        </span>
+                                    </a>
+                                    <a href="#" class="button button-danger">
+                                        <span class="material-icons">
+                                            delete
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-item">
+                            <div class="table-col col-3 text-bold">Some name</div>
+                            <div class="table-col col-3">Sent</div>
+                            <div class="table-col col-3">10 Jun 2020</div>
+                            <div class="table-col col-3">
+                                <div class="dropdown table-action-toggle-button" style="float:left;">
+                                    <div class="button"><span class="material-icons">
+                                            more_vert
+                                        </span></div>
+                                    <div class="dropdown-content">
                                         <a href="#">Edit</a>
                                         <a href="#">Copy</a>
                                         <a href="#">Delete</a>
@@ -201,6 +216,11 @@
             </div>
         </div>
     </main>
+    <script>
+        var table = document.getElementsByClassName('content-table')[0];
+        var table_top = table.getBoundingClientRect().top;
+        document.getElementsByClassName('table-items')[0].style.height = (window.innerHeight - table_top - 150) + "px";
+    </script>
 </body>
 
 </html>
